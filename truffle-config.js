@@ -20,6 +20,8 @@
 
 require('dotenv').config();
 
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+
 const mnemonic = process.env.MNENONIC;
 const customRpc = process.env.CUSTOM_RPC || 'http://localhost:8545';
 const infuraKey = process.env.INFURA_KEY;
