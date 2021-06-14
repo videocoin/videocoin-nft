@@ -1,0 +1,63 @@
+const NFT721 = artifacts.require('NFT721');
+
+contract('NFT721', (accounts) => {
+  const admin = accounts[0];
+  const operator = accounts[1];
+  const owner = accounts[2];
+  const attacker = accounts[3];
+  const tokenId = 123;
+  const url = 'https://dummy.io/metadata.json';
+  const newURL = 'https://new-dummy.io/metadata.json';
+
+  it('should has correct admin', async () => {
+    const instance = await NFT721.deployed();
+    const isAdmin = await instance.isAdmin(admin);
+
+    assert.equal(isAdmin, true, 'incorrect admin');
+  });
+
+  it('should set operator', async () => {
+    const instance = await NFT721.deployed();
+    await instance.addOperator(operator);
+    const isOperator = await instance.isOperator(operator);
+    
+    assert.equal(true, isOperator, 'invalid operator');
+  });
+
+  it('should mint token with given ID and URL', async () => {
+    const instance = await NFT721.deployed();
+    await instance.mint(owner, tokenId, url);
+    const _owner = await instance.ownerOf(tokenId);
+    const _url = await instance.tokenURI(tokenId);
+
+    assert.equal(owner, _owner, 'invalid owner');
+    assert.equal(url, _url, 'invalid URI');
+  });
+
+  it('should not allow non-operator to update token URI', async () => {
+    const instance = await NFT721.deployed(); 
+    try {
+      await instance.updateTokenURI(tokenId, 'dummy-text', {from: attacker});
+    } catch (error) {
+      assert.equal(error.reason, 'Operable: restricted to operators');
+    }
+  });
+
+  it('should allow operator to update token URI', async () => {
+    const instance = await NFT721.deployed();
+    await instance.updateTokenURI(tokenId, newURL, {from: operator});
+    const _url = await instance.tokenURI(tokenId);
+
+    assert.equal(newURL, _url, 'invalid URI');
+  });
+
+  it('should not allow revoked operator to update token URI', async () => {
+    const instance = await NFT721.deployed(); 
+    await instance.removeOperator(operator);
+    try {
+      await instance.updateTokenURI(tokenId, url, {from: operator});
+    } catch (error) {
+      assert.equal(error.reason, 'Operable: restricted to operators');
+    }
+  });
+});

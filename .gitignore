@@ -1,0 +1,6 @@
+build/
+reports/
+node_modules/
+temp/
+.vscode/
+.env
