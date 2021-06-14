@@ -45,7 +45,7 @@ To flatten smart contracts, run:
 scripts/flatten.sh
 ```
 
-the resulting files will resgin in `temp` folder.
+resulting files will resgin in `temp` folder.
 
 ## Golang bindings
 
@@ -56,4 +56,4 @@ make abi
 make bindings
 ```
 
-the resulting files will resgin in `temp` folder.
+resulting files will resgin in `temp` folder.
