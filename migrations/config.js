@@ -15,7 +15,7 @@ const setConfig = (path, val) => {
       if (!ref[key]) ref[key] = {}
       ref = ref[key]
     }
-    ref[path.pop()] = val
+    ref[path.pop()] = val.toLowerCase()
     return config
   })
 }
