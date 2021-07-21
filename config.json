@@ -12,6 +12,9 @@
     "rinkeby": {
       "NFT721": "0x9ae52ec5cb9978895d520242773767630cae906c",
       "NFT1155": "0x7734C399221cab2feA63dd81fb0A00328C78f3b5"
+    },
+    "rinkebyStaging": {
+      "NFT721": "0x145f387e86bd53b7d0528452d1d152e4061c0c1c"
     }
   }
 }
