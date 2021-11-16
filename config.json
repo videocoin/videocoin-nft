@@ -1,13 +1,14 @@
 {
   "deployed": {
     "development": {
-      "NFT1155": "0xbb092568b65718a381a1914e987b41d6914e7b5d",
-      "NFT721": "0x70308f9964b8761ead1c9f8142eca79aced7dd51",
-      "WrappedCoin": "0x010877ef01ee83bfe8850f8e69939559918eb630"
+      "NFT1155": "0x281e843cf30a3730eee5fbe2ce48cb7799cb5e6e",
+      "NFT721": "0x576ee140cacf738b4798d4fb4f694d63fca50536",
+      "WrappedCoin": "0xd408c3eababcee8410dc8b15cf93ae25fc391a96"
     },
     "custom": {
-      "NFT721": "0x019ABb0CD2409fC636E759973269d36f958DBE03",
-      "NFT1155": "0x9CbF8BCfBf7C46cD52754352d8Aa6b3c9EF5ed60"
+      "NFT721": "0xe33fd81634458dac14516797c6545ce8c04d0be8",
+      "NFT1155": "0xb5494ba4a6e158ca06904a7267fbe7609ff360bc",
+      "WrappedCoin": "0x3c7142db13f2c8bd14d9f98c47b4bde4f3b18df7"
     },
     "rinkeby": {
       "NFT721": "0x9ae52ec5cb9978895d520242773767630cae906c",
