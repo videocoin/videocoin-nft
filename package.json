@@ -11,10 +11,11 @@
     "flatten": "scripts/flatten.sh"
   },
   "dependencies": {
-    "@truffle/hdwallet-provider": "^1.4.0",
     "@openzeppelin/contracts": "3.4.0",
+    "@truffle/hdwallet-provider": "^1.4.0",
     "@zemse/solidity-flattener": "1.5.1",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "truffle": "^5.4.19"
   },
   "author": "Taras Shchybovyk",
   "license": "MIT"

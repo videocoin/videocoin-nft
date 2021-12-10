@@ -8,10 +8,11 @@
     "custom": {
       "NFT721": "0xe33fd81634458dac14516797c6545ce8c04d0be8",
       "NFT1155": "0xb5494ba4a6e158ca06904a7267fbe7609ff360bc",
-      "WrappedCoin": "0x3c7142db13f2c8bd14d9f98c47b4bde4f3b18df7"
+      "WrappedCoin": "0x3c7142db13f2c8bd14d9f98c47b4bde4f3b18df7",
+      "NFT721_operator": "0x3f374c806ef204cadb31540d013a433af4946b51"
     },
     "rinkeby": {
-      "NFT721": "0x9ae52ec5cb9978895d520242773767630cae906c",
+      "NFT721": "0x6e3d426cc760ab17d345fa08761aefcf1630796a",
       "NFT1155": "0x7734C399221cab2feA63dd81fb0A00328C78f3b5"
     },
     "rinkebyStaging": {
