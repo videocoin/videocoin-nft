@@ -1,9 +1,10 @@
 {
   "deployed": {
     "development": {
-      "NFT1155": "0x281e843cf30a3730eee5fbe2ce48cb7799cb5e6e",
-      "NFT721": "0x576ee140cacf738b4798d4fb4f694d63fca50536",
-      "WrappedCoin": "0xd408c3eababcee8410dc8b15cf93ae25fc391a96"
+      "NFT1155": "0x99922ce8e770bec3638d2ac2cb50f8f7b5c2dc27",
+      "NFT721": "0x31c727b50a96ecaf0ea7520a8ea66df549a19e56",
+      "WrappedCoin": "0x98be9ff9deeb961ed7cd8dfe04b8d0de3f63f9cf",
+      "NFT721_operator": "0xb36ffdd19bdb6607957962df91af53a291f5a95d"
     },
     "custom": {
       "NFT721": "0xe33fd81634458dac14516797c6545ce8c04d0be8",

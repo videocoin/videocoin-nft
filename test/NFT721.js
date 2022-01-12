@@ -1,11 +1,19 @@
+const {
+  BN,           // Big Number support
+  constants,    // Common constants, like the zero address and largest integers
+  expectEvent,  // Assertions for emitted events
+  expectRevert, // Assertions for transactions that should fail
+} = require('@openzeppelin/test-helpers');
+
 const NFT721 = artifacts.require('NFT721');
+
+let tokenId;
 
 contract('NFT721', (accounts) => {
   const admin = accounts[0];
   const operator = accounts[1];
   const owner = accounts[2];
   const attacker = accounts[3];
-  const tokenId = 123;
   const url = 'https://dummy.io/metadata.json';
   const newURL = 'https://new-dummy.io/metadata.json';
 
@@ -24,9 +32,16 @@ contract('NFT721', (accounts) => {
     assert.equal(true, isOperator, 'invalid operator');
   });
 
-  it('should mint token with given ID and URL', async () => {
+  it('should mint token with given URL', async () => {
     const instance = await NFT721.deployed();
-    await instance.mint(owner, tokenId, url);
+    const result = await instance.mint(owner, url);
+    tokenId = result.logs[0].args.tokenId;
+
+    expectEvent(result, 'Transfer', {
+      from: constants.ZERO_ADDRESS,
+      to: owner,
+    })
+
     const _owner = await instance.ownerOf(tokenId);
     const _url = await instance.tokenURI(tokenId);
 

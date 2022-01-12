@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.7.6;
+pragma solidity 0.8.11;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
-import "@openzeppelin/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 /**
  * @title WrappedCoin
@@ -57,7 +57,7 @@ contract WrappedCoin is Context, IERC20 {
     function withdraw(uint256 amount) public {
         _burn(_msgSender(), amount);
 
-        _msgSender().sendValue(amount);
+        Address.sendValue(payable(_msgSender()), amount);
 
         emit Withdrawn(_msgSender(), amount);
     }

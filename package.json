@@ -1,6 +1,6 @@
 {
   "name": "videocoin-nft",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "truffle-config.js",
   "directories": {
@@ -11,12 +11,15 @@
     "flatten": "scripts/flatten.sh"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "3.4.0",
-    "@truffle/hdwallet-provider": "^1.4.0",
+    "@openzeppelin/contracts": "4.4.2",
+    "@truffle/hdwallet-provider": "2.0.0",
     "@zemse/solidity-flattener": "1.5.1",
     "dotenv": "^10.0.0",
     "truffle": "^5.4.19"
   },
   "author": "Taras Shchybovyk",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.15"
+  }
 }

@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.7.6;
+pragma solidity 0.8.11;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 import "./Operable.sol";
 
 /**
@@ -9,7 +10,9 @@ import "./Operable.sol";
  * @dev Implementation of the NFT standard token (ERC721).
  * Operated by VideoCoin market place.
  */
-contract NFT721 is ERC721, Operable {
+contract NFT721 is ERC721URIStorage, Operable {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
 
     /**
      *
@@ -23,9 +26,14 @@ contract NFT721 is ERC721, Operable {
      *
      * @dev Mint token using external token ID and URI.
      */
-	function mint(address to, uint256 tokenId, string memory tokenURI) public {
-		_mint(to, tokenId);
-		_setTokenURI(tokenId, tokenURI);
+	function mint(address to, string memory tokenURI) public returns (uint256) {
+        _tokenIds.increment();
+
+        uint256 newItemId = _tokenIds.current();
+		_mint(to, newItemId);
+		_setTokenURI(newItemId, tokenURI);
+
+        return newItemId;
 	}
 
     /**
@@ -45,4 +53,8 @@ contract NFT721 is ERC721, Operable {
 	function updateTokenURI(uint256 tokenId, string memory tokenURI) public onlyOperator {
 		_setTokenURI(tokenId, tokenURI);
 	}
+
+    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721, AccessControl) returns (bool) {
+        return super.supportsInterface(interfaceId);
+    }
 }
