@@ -1,10 +1,3 @@
-const {
-  BN,           // Big Number support
-  constants,    // Common constants, like the zero address and largest integers
-  expectEvent,  // Assertions for emitted events
-  expectRevert, // Assertions for transactions that should fail
-} = require('@openzeppelin/test-helpers');
-
 const NFT721 = artifacts.require('NFT721');
 
 let tokenId;
@@ -36,11 +29,6 @@ contract('NFT721', (accounts) => {
     const instance = await NFT721.deployed();
     const result = await instance.mint(owner, url);
     tokenId = result.logs[0].args.tokenId;
-
-    expectEvent(result, 'Transfer', {
-      from: constants.ZERO_ADDRESS,
-      to: owner,
-    })
 
     const _owner = await instance.ownerOf(tokenId);
     const _url = await instance.tokenURI(tokenId);
