@@ -2,22 +2,22 @@
   "deployed": {
     "development": {
       "NFT1155": "0x1c4d0028fadefc3043402f978c8dc3f8f7321a6b",
-      "NFT721": "0xc1b279d20056b917e9551e8a71726a7aa0cd676a",
+      "VIVID721": "0xc1b279d20056b917e9551e8a71726a7aa0cd676a",
       "WrappedCoin": "0xfe7e0e8aaf480ad2f4c9e75f56af995e758346ea",
       "NFT721_operator": "0xb36ffdd19bdb6607957962df91af53a291f5a95d"
     },
     "custom": {
-      "NFT721": "0xe33fd81634458dac14516797c6545ce8c04d0be8",
+      "VIVID721": "0xe33fd81634458dac14516797c6545ce8c04d0be8",
       "NFT1155": "0xb5494ba4a6e158ca06904a7267fbe7609ff360bc",
       "WrappedCoin": "0x3c7142db13f2c8bd14d9f98c47b4bde4f3b18df7",
       "NFT721_operator": "0x3f374c806ef204cadb31540d013a433af4946b51"
     },
     "rinkeby": {
-      "NFT721": "0x6e3d426cc760ab17d345fa08761aefcf1630796a",
+      "VIVID721": "0x6e3d426cc760ab17d345fa08761aefcf1630796a",
       "NFT1155": "0x7734C399221cab2feA63dd81fb0A00328C78f3b5"
     },
     "rinkebyStaging": {
-      "NFT721": "0x145f387e86bd53b7d0528452d1d152e4061c0c1c"
+      "VIVID721": "0x145f387e86bd53b7d0528452d1d152e4061c0c1c"
     }
   }
 }

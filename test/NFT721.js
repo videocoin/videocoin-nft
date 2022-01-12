@@ -1,8 +1,8 @@
-const NFT721 = artifacts.require('NFT721');
+const VIVID721 = artifacts.require('VIVID721');
 
 let tokenId;
 
-contract('NFT721', (accounts) => {
+contract('VIVID721', (accounts) => {
   const admin = accounts[0];
   const operator = accounts[1];
   const owner = accounts[2];
@@ -11,14 +11,14 @@ contract('NFT721', (accounts) => {
   const newURL = 'https://new-dummy.io/metadata.json';
 
   it('should has correct admin', async () => {
-    const instance = await NFT721.deployed();
+    const instance = await VIVID721.deployed();
     const isAdmin = await instance.isAdmin(admin);
 
     assert.equal(isAdmin, true, 'incorrect admin');
   });
 
   it('should set operator', async () => {
-    const instance = await NFT721.deployed();
+    const instance = await VIVID721.deployed();
     await instance.addOperator(operator);
     const isOperator = await instance.isOperator(operator);
     
@@ -26,7 +26,7 @@ contract('NFT721', (accounts) => {
   });
 
   it('should mint token with given URL', async () => {
-    const instance = await NFT721.deployed();
+    const instance = await VIVID721.deployed();
     const result = await instance.mint(owner, url);
     tokenId = result.logs[0].args.tokenId;
 
@@ -38,7 +38,7 @@ contract('NFT721', (accounts) => {
   });
 
   it('should not allow non-operator to update token URI', async () => {
-    const instance = await NFT721.deployed(); 
+    const instance = await VIVID721.deployed(); 
     try {
       await instance.updateTokenURI(tokenId, 'dummy-text', {from: attacker});
     } catch (error) {
@@ -47,7 +47,7 @@ contract('NFT721', (accounts) => {
   });
 
   it('should allow operator to update token URI', async () => {
-    const instance = await NFT721.deployed();
+    const instance = await VIVID721.deployed();
     await instance.updateTokenURI(tokenId, newURL, {from: operator});
     const _url = await instance.tokenURI(tokenId);
 
@@ -55,7 +55,7 @@ contract('NFT721', (accounts) => {
   });
 
   it('should not allow revoked operator to update token URI', async () => {
-    const instance = await NFT721.deployed(); 
+    const instance = await VIVID721.deployed(); 
     await instance.removeOperator(operator);
     try {
       await instance.updateTokenURI(tokenId, url, {from: operator});

@@ -10,7 +10,7 @@ import "./Operable.sol";
  * @dev Implementation of the NFT standard token (ERC721).
  * Operated by VideoCoin market place.
  */
-contract NFT721 is ERC721URIStorage, Operable {
+contract VIVID721 is ERC721URIStorage, Operable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 

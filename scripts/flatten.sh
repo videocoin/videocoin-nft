@@ -9,7 +9,7 @@ cd ..
 
 alias flatten="./node_modules/.bin/truffle-flattener"
 
-flatten contracts/NFT721.sol --output temp/NFT721.sol
+flatten contracts/VIVID721.sol --output temp/VIVID721.sol
 flatten contracts/NFT1155.sol --output temp/NFT1155.sol
 
 cd contracts
