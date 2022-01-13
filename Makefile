@@ -1,7 +1,7 @@
 ABIGEN_DOCKER=docker run \
 	-v $(shell pwd):/solidity \
 	-v $(shell pwd)/build:/build \
-	--rm -ti ethereum/solc:0.7.6
+	--rm -ti ethereum/solc:0.8.11
 
 .PHONY: abi
 abi:
