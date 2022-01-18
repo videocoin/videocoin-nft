@@ -26,7 +26,7 @@ contract VIVID721 is ERC721URIStorage, Operable {
      *
      * @dev Mint token using external token ID and URI.
      */
-	function mint(address to, string memory tokenURI) public returns (uint256) {
+	function mint(address to, string memory tokenURI) public onlyOperator returns (uint256) {
         _tokenIds.increment();
 
         uint256 newItemId = _tokenIds.current();

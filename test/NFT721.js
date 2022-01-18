@@ -27,7 +27,7 @@ contract('VIVID721', (accounts) => {
 
   it('should mint token with given URL', async () => {
     const instance = await VIVID721.deployed();
-    const result = await instance.mint(owner, url);
+    const result = await instance.mint(owner, url, {from: operator});
     tokenId = result.logs[0].args.tokenId;
 
     const _owner = await instance.ownerOf(tokenId);
