@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "4.4.2",
-    "@truffle/hdwallet-provider": "2.0.0",
-    "dotenv": "^10.0.0",
-    "truffle": "^5.4.19",
+    "@truffle/hdwallet-provider": "2.0.1",
+    "dotenv": "^14.2.0",
+    "truffle": "^5.4.30",
     "truffle-flattener": "github:jplew/truffle-flattener"
   },
   "author": "Taras Shchybovyk",

@@ -14,7 +14,7 @@ COPY ./package-lock.json ./package-lock.json
 COPY ./truffle-config.js ./truffle-config.js
 COPY ./config.json ./config.json
 
-ENV PRIVATE_RPC ""
+ENV CUSTOM_RPC ""
 ENV MNENONIC ""
 ENV INFURA_KEY ""
 ENV NFT721_NAME ""

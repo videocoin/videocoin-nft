@@ -37,6 +37,15 @@ contract('VIVID721', (accounts) => {
     assert.equal(url, _url, 'invalid URI');
   });
 
+  it('should not allow non-operator to mint token', async () => {
+    const instance = await VIVID721.deployed(); 
+    try {
+      await instance.mint(owner, url, {from: attacker});
+    } catch (error) {
+      assert.equal(error.reason, 'Operable: restricted to operators');
+    }
+  });
+
   it('should not allow non-operator to update token URI', async () => {
     const instance = await VIVID721.deployed(); 
     try {

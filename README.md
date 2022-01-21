@@ -17,7 +17,7 @@ npm install
 Use `.env.template` to create and configure `.env` file:
 
 ```$.evn
-PRIVATE_RPC=https://rpc.my-nft.io
+CUSTOM_RPC=https://rpc.my-nft.io
 MNENONIC=abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about
 INFURA_KEY=
 NFT721_ADMIN=
