@@ -24,7 +24,7 @@ contract VIVID721 is ERC721URIStorage, Operable {
 
     /**
      *
-     * @dev Mint token using external token ID and URI.
+     * @dev Mint token using URI.
      */
 	function mint(address to, string memory tokenURI) public onlyOperator returns (uint256) {
         _tokenIds.increment();
@@ -35,6 +35,15 @@ contract VIVID721 is ERC721URIStorage, Operable {
 
         return newItemId;
 	}
+
+    /**
+     *
+     * @dev Burn token using external token ID.
+     */
+    function burn(uint256 tokenId) public {
+        require(_isApprovedOrOwner(_msgSender(), tokenId), "VIVID721: caller is not owner nor approved");
+        _burn(tokenId);
+    }
 
     /**
      *
