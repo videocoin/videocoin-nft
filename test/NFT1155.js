@@ -8,6 +8,7 @@ contract('NFT1155', (accounts) => {
   const pureTokenId = 'eb3fc29e6eda71da58131a581848d4b07355c350a5aae3268f5b271c1bdf286d';
   const tokenId = `0x${pureTokenId}`;
   const tokenUri = `ipfs://f01551220${pureTokenId}`;
+  const tokenUriV1 = 'ipfs://bafkreihlh7bj43w2ohnfqey2lamervfqonk4guffvlrsnd23e4obxxzinu';
 
   it('should mint 10 tokens with given ID', async () => {
     const instance = await VIVID1155.deployed();
@@ -21,8 +22,10 @@ contract('NFT1155', (accounts) => {
   it('should provide correct IPFS URI to given to given token ID', async () => {
     const instance = await VIVID1155.deployed();
     const uri = await instance.uri(tokenId);
+    const uriV1 = await instance.uriV1(tokenId);
 
     assert.equal(uri.toLowerCase(), tokenUri.toLocaleLowerCase(), 'incorrect URI');
+    assert.equal(uriV1, tokenUriV1, 'incorrect URI');
   });
 
   it('should not allow non-operator to mint token', async () => {
