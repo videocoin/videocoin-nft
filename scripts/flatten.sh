@@ -10,6 +10,7 @@ cd ..
 alias flatten="./node_modules/.bin/truffle-flattener"
 
 flatten contracts/VIVID721.sol --output temp/VIVID721.sol
+flatten contracts/Vivid721v2.sol --output temp/Vivid721v2.sol
 flatten contracts/VIVID1155.sol --output temp/VIVID1155.sol
 
 cd contracts
