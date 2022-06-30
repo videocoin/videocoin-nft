@@ -14,7 +14,7 @@ contract('VIVID721', (accounts) => {
     const instance = await VIVID721.deployed();
     const isAdmin = await instance.isAdmin(admin);
 
-    assert.equal(isAdmin, true, 'incorrect admin');
+    assert.isTrue(isAdmin, 'incorrect admin');
   });
 
   it('should set operator', async () => {
@@ -22,7 +22,7 @@ contract('VIVID721', (accounts) => {
     await instance.addOperator(operator);
     const isOperator = await instance.isOperator(operator);
     
-    assert.equal(true, isOperator, 'invalid operator');
+    assert.isTrue(isOperator, 'invalid operator');
   });
 
   it('should mint token with given URL', async () => {

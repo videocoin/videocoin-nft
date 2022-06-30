@@ -42,7 +42,7 @@ contract('NFT1155', (accounts) => {
     try {
       await instance.burn(owner, tokenId, 10, {from: attacker});
     } catch (error) {
-      assert.equal(error.reason, 'ERC1155: caller is not owner nor approved');
+      assert.equal(error.reason, 'ERC1155: caller is not token owner nor approved');
     }
   });
 
