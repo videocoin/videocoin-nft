@@ -2,11 +2,12 @@
   "deployed": {
     "development": {
       "NFT1155": "0x8830af26a02bf6517aaa5836196a30cb545e011f",
-      "VIVID721": "0x2a5ab7d94f3131ff4a1527e985996a6af199f1f8",
-      "WrappedCoin": "0x9d975f16a30cbe0100f06f2ee442e4a1b6a6af1d",
+      "VIVID721": "0x52d80c3edffb5a5a3019fdcdc49d6f759f4e6ca0",
+      "WrappedCoin": "0x7850277271efa8b2c483f9229b662bd762043a04",
       "VIVID721_operator": "0x3f374c806ef204cadb31540d013a433af4946b51",
-      "VIVID1155": "0x40c9491218ff01bd31742e7ddf2fec1730f977b9",
-      "Vivid721v2": "0xa5e89d6364ab09c1296bf1acfcf19fac5a3d60a6"
+      "VIVID1155": "0x378ada568f8ef80550eb267362c1c1b91a969542",
+      "Vivid721v2": "0x77f275d9cc68f9a109b1fc25140909018641b521",
+      "Vivid1155v2": "0xc3230b09df9c49d75a857dc8983cdf391c89d0b8"
     },
     "custom": {
       "VIVID721": "0x08ed3056a823053b1e29b12d5d7f38ba76202a03",
