@@ -17,7 +17,7 @@ contract Vivid1155v2 is ERC1155Burnable, ERC1155URIStorage, AccessControl {
     /**
      *
      */
-    constructor() ERC1155("ipfs://{cid}") {
+    constructor() ERC1155("") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, msg.sender);
         _grantRole(UPDATER_ROLE, msg.sender);
@@ -30,11 +30,10 @@ contract Vivid1155v2 is ERC1155Burnable, ERC1155URIStorage, AccessControl {
     function mint(
         address to,
         uint256 tokenId,
-        uint256 amount,
-        string memory tokenURI
+        uint256 amount
     ) public onlyRole(MINTER_ROLE) {
+        require(exists(tokenId), "Vivid1155v2: token is not intialized");
         _mint(to, tokenId, amount, "");
-        _setURI(tokenId, tokenURI);
     }
 
     function uri(uint256 tokenId)
@@ -47,10 +46,19 @@ contract Vivid1155v2 is ERC1155Burnable, ERC1155URIStorage, AccessControl {
         return super.uri(tokenId);
     }
 
-    function setURI(uint256 tokenId, string memory tokenURI)
+    function initialize(uint256 tokenId, string memory tokenURI)
+        public
+        onlyRole(MINTER_ROLE)
+    {
+        require(!exists(tokenId), "Vivid1155v2: token already intialized");
+        super._setURI(tokenId, tokenURI);
+    }
+
+    function updateURI(uint256 tokenId, string memory tokenURI)
         public
         onlyRole(UPDATER_ROLE)
     {
+        require(exists(tokenId), "Vivid1155v2: token is not intialized");
         super._setURI(tokenId, tokenURI);
     }
 
@@ -62,5 +70,9 @@ contract Vivid1155v2 is ERC1155Burnable, ERC1155URIStorage, AccessControl {
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
+    }
+
+    function exists(uint256 tokenId) public view returns (bool) {
+        return bytes(super.uri(tokenId)).length > 0;
     }
 }

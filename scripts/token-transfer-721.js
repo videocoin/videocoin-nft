@@ -9,7 +9,8 @@ const faucetKey = process.env.FAUCET_KEY;
 const customRpc = process.env.CUSTOM_RPC;
 const vivid721addr = process.env.VIVID721_ADDR;
 const tokenOwnerKey = process.env.TOKEN_OWNER_KEY;
-const recipient = process.env.RECIPIENT || '0x000000000000000000000000000000000000dEaD';
+// const recipient = process.env.RECIPIENT || '0x000000000000000000000000000000000000dEaD';
+const recipient = process.env.RECIPIENT;
 const tokenID = process.env.TOKEN_ID;
 
 const faucetProvider = new HDWalletProvider(faucetKey, customRpc)
