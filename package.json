@@ -1,25 +1,18 @@
 {
   "name": "videocoin-nft",
-  "version": "2.0.0",
-  "description": "",
-  "main": "truffle-config.js",
-  "directories": {
-    "test": "test"
-  },
+  "version": "1.0.0",
+  "description": "NFT smart contracts operated by VideoCoin NFT marketplace.",
+  "main": "index.js",
   "scripts": {
-    "test": "truffle test",
-    "flatten": "scripts/flatten.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.7.0",
-    "@truffle/hdwallet-provider": "^2.0.9",
-    "dotenv": "^16.0.0",
-    "truffle": "^5.5.19",
-    "truffle-flattener": "github:jplew/truffle-flattener"
+    "@openzeppelin/contracts": "^4.7.0"
   },
-  "author": "Taras Shchybovyk",
-  "license": "MIT",
   "devDependencies": {
-    "@openzeppelin/test-helpers": "^0.5.15"
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "hardhat": "^2.19.4"
   }
 }
