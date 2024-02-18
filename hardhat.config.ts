@@ -16,7 +16,7 @@ const config: HardhatUserConfig = {
 	    accounts: [process.env.VID_SIGNER_KEY]
     },
     polygon: {
-	    url: 'https://polygon-rpc.com/',
+	    url: 'https://morning-clean-knowledge.matic.quiknode.pro/ba2985fca323a96dd1a0a1a311dc49873826eb4e/',
 	    accounts: [process.env.VID_SIGNER_KEY]
     },
 

@@ -11,13 +11,19 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
  * Operated by VideoCoin market place.
  */
 contract Vivid1155v2 is ERC1155Burnable, ERC1155URIStorage, AccessControl {
+    string public name;
+    string public symbol;
+
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant UPDATER_ROLE = keccak256("UPDATER_ROLE");
 
     /**
      *
      */
-    constructor() ERC1155("") {
+    constructor(string memory _name, string memory _symbol) ERC1155("") {
+        name = _name;
+        symbol = _symbol;
+
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, msg.sender);
         _grantRole(UPDATER_ROLE, msg.sender);
